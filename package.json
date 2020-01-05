@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "serve": "webpack-dev-server --open",
-    "bs": "webpack && webpack-dev-server --open"
+    "bs": "webpack && webpack-dev-server --open",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "lint-fix": "tslint --config tslint.json 'src/**/*.ts' --fix"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +27,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
+    "popper.js": "^1.16.0",
+    "tslint": "^5.20.1"
   }
 }

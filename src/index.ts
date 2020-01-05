@@ -1,22 +1,22 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CardState } from './enums';
+import { setCardBodyState } from './helpers';
 import {
   startCalcQuestion2,
   startCalcQuestion3,
   startCalcQuestion4,
   startCalcQuestion5,
   startCalcQuestion6,
-  startCalcQuestion7
+  startCalcQuestion7,
 } from './question-calculations';
-import { setCardBodyState } from './helpers';
 
 export async function startCalculation(buttonInput: HTMLInputElement) {
-  var answerInput = buttonInput.nextElementSibling as HTMLInputElement;
-  var questionNumber: number = Number(answerInput.id.split('-')[2]);
+  const answerInput = buttonInput.nextElementSibling as HTMLInputElement;
+  const questionNumber: number = Number(answerInput.id.split('-')[2]);
 
   await setCardBodyState(CardState.Busy, buttonInput);
 
-  let promise = new Promise((resolve, reject) => {
+  const promise = new Promise((resolve) => {
     setTimeout(() => resolve('done!'), 1000);
   });
 

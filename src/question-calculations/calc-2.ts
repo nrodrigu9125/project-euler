@@ -1,4 +1,4 @@
-import { isOdd, setAnswerText } from "../helpers";
+import { isOdd, setAnswerText } from '../helpers';
 
 export async function startCalcQuestion2() {
     let continueCalc = true;
@@ -12,24 +12,24 @@ export async function startCalcQuestion2() {
       // swap
       startV1 = startV2;
       startV2 = tempSum;
-  
+
       if (startV1 === 2) {
         answerSum += startV1;
       }
-  
-      //check tempSum for > 4M
+
+      // check tempSum for > 4M
       if (tempSum > 4000000) {
         continueCalc = false;
         continue;
       }
-  
-      //check number for even
+
+      // check number for even
       if (isOdd(tempSum)) {
         continue;
       }
-  
+
       answerSum += tempSum;
     }
-  
+
     setAnswerText(answerSum, 2);
   }

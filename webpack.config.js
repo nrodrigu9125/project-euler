@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const webpack = require('webpack');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -17,14 +18,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          { loader: "style-loader" },
-          { loader: "css-loader" }
+          { loader: 'style-loader' },
+          { loader: 'css-loader' }
         ]
       }
     ]
   },
   resolve: {
-    extensions: [ ".tsx", ".ts", ".js" ]
+    extensions: [ '.tsx', '.ts', '.js' ]
   },
   output: {
     filename: 'bundle.js',
