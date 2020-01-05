@@ -1,8 +1,41 @@
 import * as lib from './helperFunctions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+export function startCalculation(input: Element) {
+  var answerInput = input.nextElementSibling as HTMLInputElement;
+  var questionNumber: number = Number(answerInput.id.split('-')[2]);
+  switch (questionNumber) {
+    case 1: {
+      break;
+    }
+    case 2: {
+      startCalcQuestion2();
+      break;
+    }
+    case 3: {
+      startCalcQuestion3();
+      break;
+    }
+    case 4: {
+      startCalcQuestion4();
+      break;
+    }
+    case 5: {
+      startCalcQuestion5();
+      break;
+    }
+    case 6: {
+      startCalcQuestion6();
+      break;
+    }
+    default: {
+      //statements;
+      break;
+    }
+  }
+}
+
 export function startCalcQuestion2() {
-  console.log("starting startCalcQuestion2...");
   let continueCalc = true;
   let startV1 = 1;
   let startV2 = 2;
@@ -31,10 +64,7 @@ export function startCalcQuestion2() {
     }
 
     answerSum += tempSum;
-    console.log(tempSum);
   }
-
-  console.log("done. answer is: ", answerSum);
 
   lib.setAnswerText(answerSum, 2);
 }
@@ -53,9 +83,6 @@ export function startCalcQuestion3() {
     }
   }
 
-  for (var k = 0; k < primeArray.length; k++) {
-    console.log(primeArray[k]);
-  }
   lib.setAnswerText(primeArray[primeArray.length - 1], 3);
 }
 
@@ -85,7 +112,6 @@ export function startCalcQuestion5() {
     allDivisible = true;
 
     for (let index = 1; index <= 20 && allDivisible; index++) {
-      //console.log(`${startVal} % ${index} = ${startVal % index}`);
       if (startVal % index !== 0) {
         allDivisible = false;
       }
@@ -97,8 +123,6 @@ export function startCalcQuestion5() {
       startVal++;
     }
   }
-
-  console.log(startVal);
 
   lib.setAnswerText(startVal, 5);
 }
@@ -130,9 +154,7 @@ export function startCalcQuestion7() {
     primeArray = [];
   while (primeArray.length !== 10000) {
     if (lib.isOdd(startVal)) {
-      console.log(`found a odd ${startVal}`);
       if (lib.isPrime(startVal)) {
-        console.log(`found a prime ${startVal}`);
         primeArray.push(startVal);
       }
     }
@@ -141,8 +163,4 @@ export function startCalcQuestion7() {
   }
 
   lib.setAnswerText(primeArray[primeArray.length - 1], 7);
-}
-
-export function run() {
-  console.log('running a test');
 }

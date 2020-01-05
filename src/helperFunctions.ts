@@ -40,8 +40,8 @@ export function buildNumberArrayFrom1ToN(length: number) {
 }
 
 export function setAnswerText(answerSum: number, questionNumber: number) {
-  const ans2 = document.querySelector(`#answer-question-${questionNumber}`);
-  if (ans2) {
-    ans2.textContent = answerSum.toString();
+  const htmlElement = document.querySelector(`#answer-question-${questionNumber}`);
+  if (htmlElement && htmlElement instanceof HTMLInputElement) {
+    (htmlElement as HTMLInputElement).value = answerSum.toString();
   }
 }
