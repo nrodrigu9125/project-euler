@@ -1,6 +1,8 @@
 import { isOdd, isPrime, setAnswerText } from '../helpers';
+import { ICalculation } from '../interfaces/calculation';
 
-export async function startCalcQuestion7() {
+export class Question7Calculation implements ICalculation {
+  public async calculate() {
     // about 8 seconds to run
     let startVal = 1;
     const primeArray: number[] = [];
@@ -16,3 +18,4 @@ export async function startCalcQuestion7() {
 
     setAnswerText(primeArray[primeArray.length - 1], 7);
   }
+}

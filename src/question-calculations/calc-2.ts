@@ -1,6 +1,8 @@
 import { isOdd, setAnswerText } from '../helpers';
+import { ICalculation } from '../interfaces/calculation';
 
-export async function startCalcQuestion2() {
+export class Question2Calculation implements ICalculation {
+  public async calculate() {
     let continueCalc = true;
     let startV1 = 1;
     let startV2 = 2;
@@ -33,3 +35,4 @@ export async function startCalcQuestion2() {
 
     setAnswerText(answerSum, 2);
   }
+}

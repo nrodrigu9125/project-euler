@@ -1,6 +1,8 @@
 import { isPalindrome, setAnswerText } from '../helpers';
+import { ICalculation } from '../interfaces/calculation';
 
-export async function startCalcQuestion4() {
+export class Question4Calculation implements ICalculation {
+  public async calculate() {
     let largestVal = 0;
     let localSum = 0;
 
@@ -17,3 +19,4 @@ export async function startCalcQuestion4() {
 
     setAnswerText(largestVal, 4);
   }
+}

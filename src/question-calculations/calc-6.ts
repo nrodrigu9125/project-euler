@@ -1,6 +1,8 @@
 import { buildNumberArrayFrom1ToN, setAnswerText } from '../helpers';
+import { ICalculation } from '../interfaces/calculation';
 
-export async function startCalcQuestion6() {
+export class Question6Calculation implements ICalculation {
+  public async calculate() {
     const MAX_NATURAL = 100;
     let sumOfNaturalsSquared;
     let sumOfNaturalsThenSquared;
@@ -20,3 +22,4 @@ export async function startCalcQuestion6() {
 
     setAnswerText(totalDifference, 6);
   }
+}

@@ -9,13 +9,11 @@ export function setAnswerText(answerSum: number, questionNumber: number) {
   }
 }
 
-export async function setCardBodyState(
+export function setCardBodyState(
   state: CardState,
   buttonInput: HTMLInputElement,
 ) {
   if (buttonInput.parentElement) {
-    // <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-
     const allInputChildren: HTMLInputElement[] = [
       ...buttonInput.parentElement.getElementsByTagName('input'),
     ];

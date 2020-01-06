@@ -1,6 +1,8 @@
 import { setAnswerText } from '../helpers';
+import { ICalculation } from '../interfaces/calculation';
 
-export async function startCalcQuestion5() {
+export class Question5Calculation implements ICalculation {
+  public async calculate() {
     let stop = false;
     let startVal = 1;
     let allDivisible = true;
@@ -22,3 +24,4 @@ export async function startCalcQuestion5() {
 
     setAnswerText(startVal, 5);
   }
+}
