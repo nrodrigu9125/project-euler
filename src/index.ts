@@ -10,11 +10,11 @@ export async function startCalculation(buttonInput: HTMLInputElement) {
 
   setCardBodyState(CardState.Busy, buttonInput);
 
-  const promise = new Promise((resolve) => {
+  const uiUpdatePromise = new Promise((resolve) => {
     setTimeout(() => resolve('done!'), 10);
   });
 
-  await promise;
+  await uiUpdatePromise;
 
   const classString = `Question${questionNumber}Calculation`;
 

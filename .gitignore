@@ -4,6 +4,7 @@
 # /dist TODO: Revist this when I can figure out how to copy index.html into dist using webpack
 /tmp
 /out-tsc
+/dist
 
 # dependencies
 /node_modules
