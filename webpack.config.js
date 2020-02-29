@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 const path = require('path');
 // const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -33,6 +33,12 @@ module.exports = {
     libraryTarget: 'var',
     library: 'EntryPoint'
   },
+  plugins: [
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: 'index.html',
+      template: 'src/assets/index.html'
+    })
+  ],
   devServer: {
     contentBase: path.join(__dirname, 'dist')
   },  

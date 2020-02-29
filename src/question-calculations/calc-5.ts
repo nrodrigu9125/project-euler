@@ -6,6 +6,7 @@ export class Question5Calculation implements ICalculation {
     let stop = false;
     let startVal = 1;
     let allDivisible = true;
+
     while (!stop) {
       allDivisible = true;
 

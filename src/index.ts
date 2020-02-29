@@ -10,12 +10,6 @@ export async function startCalculation(buttonInput: HTMLInputElement) {
 
   setCardBodyState(CardState.Busy, buttonInput);
 
-  const uiUpdatePromise = new Promise((resolve) => {
-    setTimeout(() => resolve('done!'), 10);
-  });
-
-  await uiUpdatePromise;
-
   const classString = `Question${questionNumber}Calculation`;
 
   const loader = new InstanceLoader<ICalculation>();
@@ -28,7 +22,10 @@ export async function startCalculation(buttonInput: HTMLInputElement) {
     return;
   }
 
-  await dynamicCalculationStrategy
-    .calculate()
-    .then(() => setCardBodyState(CardState.NotBusy, buttonInput));
+  setTimeout(async () => {
+    // Do something
+    await dynamicCalculationStrategy.calculate().then(() => {
+      setCardBodyState(CardState.NotBusy, buttonInput);
+    });
+  }, 30);
 }
